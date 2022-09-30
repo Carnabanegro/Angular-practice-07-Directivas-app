@@ -1,0 +1,47 @@
+<h1 class="mt-5">Agregar producto</h1>
+<hr>
+
+
+<form [formGroup]="miFormularioReactivo">
+
+    <div class="row g-3 align-content-center pt-5">
+
+        <div class="col-auto">
+            <label class="form-label fw-bold">Nombre:</label>
+        </div>
+
+        <div class="col-auto gap-3">
+            <input placeholder="Nombre de producto" formControlName="nombre" class="form-input ">
+            <span 
+            *ngIf="tieneError()" 
+            class="alert-danger rounded p-1 mx-3"
+            error-msg
+            [color]="color"
+          
+        ></span>
+        </div>
+
+        <div class="row pt-3" *cusIf="miFormularioReactivo.valid">
+            <span 
+            class="alert-success rounded p-1 mx-3"
+            >DIRECTIVA FUNCIONANDO</span>
+        </div>
+
+        
+
+    </div>
+
+    <div class="row mt-3 justify-content-end">
+        <div class="col-3">
+            <button class=" btn btn-primary mx-3" (click)="cambiarMensaje()">Agregar</button>
+            <button class=" btn btn-success" (click)="cambiarColor()" >Cambiar Color</button>
+        </div>
+       
+    </div>
+
+    <div class="row pt-2 ">
+        
+    </div>
+</form>
+
+
